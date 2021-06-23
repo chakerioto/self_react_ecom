@@ -49,7 +49,7 @@ class App extends React.Component {
         <Header/>
         <Switch>
         <Route exact path='/' component={HomePage} />
-        <Route exact path='/shop' component={ShopPage} />
+        <Route path='/shop' component={ShopPage} />
         <Route exact path='/checkout' component={CheckoutPage} />
         <Route
              exact
@@ -75,4 +75,4 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUSer: user => dispatch(setCurrentUSer(user))
 })
 
-export default connect(null,mapDispatchToProps)(App);
+export default connect(mapStateToProps,mapDispatchToProps)(App);
